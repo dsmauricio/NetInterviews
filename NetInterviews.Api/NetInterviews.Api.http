@@ -1,0 +1,63 @@
+@NetInterviews.Api_HostAddress = http://localhost:5170
+
+GET {{NetInterviews.Api_HostAddress}}/Category/
+Accept: application/json
+
+###
+GET {{NetInterviews.Api_HostAddress}}/Category/1
+Accept: application/json
+
+###
+POST {{NetInterviews.Api_HostAddress}}/Category
+Content-Type: application/json
+
+{
+  "name" : "Comedy"
+}
+
+###
+PUT {{NetInterviews.Api_HostAddress}}/Category/5
+Content-Type: application/json
+
+{
+  "name" : "Comedy."
+}
+
+###
+DELETE {{NetInterviews.Api_HostAddress}}/Category/5
+Content-Type: application/json
+
+### 
+GET {{NetInterviews.Api_HostAddress}}/Movie
+Accept: application/json
+
+###
+GET {{NetInterviews.Api_HostAddress}}/Movie/1
+Accept: application/json
+
+###
+POST {{NetInterviews.Api_HostAddress}}/Movie
+Content-Type: application/json
+
+{
+  "title": "Lord of the Rings",
+  "rating": 4,
+  "seen": false,
+  "categoryId": 2
+}
+
+###
+
+PUT {{NetInterviews.Api_HostAddress}}/Movie/6
+Content-Type: application/json
+
+{
+  "title": "Lord of the Rings.",
+  "rating": 4,
+  "seen": false,
+  "categoryId": 2
+}
+
+###
+DELETE {{NetInterviews.Api_HostAddress}}/Movie/9
+Content-Type: application/json
