@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using NetInterviews.Business.Services;
 using NetInterviews.Infrastructure.Data;
 using NetInterviews.Infrastructure.Repositories;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference(o =>
+        o.WithTheme(ScalarTheme.DeepSpace));
 }
 
 app.UseHttpsRedirection();
@@ -33,4 +36,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+await app.RunAsync();
